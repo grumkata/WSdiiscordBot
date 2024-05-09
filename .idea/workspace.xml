@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be4dce3-aafd-450a-879a-9af2696c48a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarScribe Discord Bot.userlibraries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WarScribeDiscordBot.eml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/ServerData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Users.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/Commands/commandsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/DataManagers/persona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/DataManagers/sUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/DataManagers/sUserDeserialize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/DataManagers/sUserSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/Listeners/EventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grumkata/JDAWarScribe/WarScribe.java" afterDir="false" />
+    <list default="true" id="9be4dce3-aafd-450a-879a-9af2696c48a8" name="Changes" comment="bot has bunchastuff now lol">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/env.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "grumkata"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/grumkata/WSdiiscordBot.git",
+    "accountId": "6fbe3bc1-820a-4710-997a-d03b21c425f8"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -85,6 +82,15 @@
       <option name="presentableId" value="Default" />
       <updated>1714523327049</updated>
     </task>
+    <task id="LOCAL-00001" summary="bot has bunchastuff now lol">
+      <option name="closed" value="true" />
+      <created>1715219883403</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715219883403</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -92,5 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="bot has bunchastuff now lol" />
+    <option name="LAST_COMMIT_MESSAGE" value="bot has bunchastuff now lol" />
   </component>
 </project>
