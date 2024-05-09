@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_21" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: net.java.dev.jna:jna:4.4.0" scope="RUNTIME"/>
+	<lib name="Maven: net.sf.trove4j:core:3.1.0" scope="RUNTIME"/>
+	<levels>
+		<level name="Maven: net.dv8tion:JDA:5.0.0-beta.23" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.36" value="project"/>
+		<level name="Maven: com.neovisionaries:nv-websocket-client:2.14" value="project"/>
+		<level name="Maven: com.squareup.okhttp3:okhttp:4.12.0" value="project"/>
+		<level name="Maven: com.squareup.okio:okio:3.6.0" value="project"/>
+		<level name="Maven: com.squareup.okio:okio-jvm:3.6.0" value="project"/>
+		<level name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10" value="project"/>
+		<level name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21" value="project"/>
+		<level name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.8.21" value="project"/>
+		<level name="Maven: org.jetbrains:annotations:13.0" value="project"/>
+		<level name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21" value="project"/>
+		<level name="Maven: club.minnced:opus-java:1.1.1" value="project"/>
+		<level name="Maven: club.minnced:opus-java-api:1.1.1" value="project"/>
+		<level name="Maven: net.java.dev.jna:jna:4.4.0" value="project"/>
+		<level name="Maven: club.minnced:opus-java-natives:1.1.1" value="project"/>
+		<level name="Maven: org.apache.commons:commons-collections4:4.4" value="project"/>
+		<level name="Maven: net.sf.trove4j:core:3.1.0" value="project"/>
+		<level name="Maven: io.github.cdimascio:dotenv-java:3.0.0" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.17.1" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.17.1" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.16.0" value="project"/>
+		<level name="Maven: club.minnced:discord-webhooks:0.8.4" value="project"/>
+		<level name="Maven: org.json:json:20230618" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.16.1" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.16.1" value="project"/>
+	</levels>
+</component>
