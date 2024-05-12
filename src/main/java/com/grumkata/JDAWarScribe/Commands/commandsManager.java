@@ -8,6 +8,7 @@ import com.grumkata.JDAWarScribe.DataManagers.persona;
 import com.grumkata.JDAWarScribe.DataManagers.sUser;
 import com.grumkata.JDAWarScribe.WarScribe;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.CommandAutoCompleteInteractionEvent;
@@ -179,6 +180,55 @@ public class commandsManager extends ListenerAdapter {
                 }
                 event.getHook().sendMessage("message sent").queueAfter(1, TimeUnit.MICROSECONDS);
                 break;
+            case "combat":
+                event.deferReply(true).queue();
+                if(event.getChannel().getName().equals("combat-channel")) {
+                    int A1num = event.getOption("army1num").getAsInt();
+                    int A2num = event.getOption("army2num").getAsInt();
+                    int A1val = 0;
+                    int A2val = 0;
+                    int constAdv = 0;
+                    double multAdv = 1;
+                    String A1name = "imperial";
+                    String A2name = "caliphate";
+                    if (event.getOption("a1dif") != null) {
+                        constAdv += event.getOption("a1dif").getAsInt();
+                        A1val = event.getOption("a1dif").getAsInt();
+                    }
+                    if (event.getOption("a2dif") != null) {
+                        constAdv += event.getOption("a2dif").getAsInt();
+                        A2val = event.getOption("a2dif").getAsInt();
+                    }
+                    if (event.getOption("a1name") != null) {
+                        A1name = event.getOption("a1name").getAsString();
+                    }
+                    if (event.getOption("a2name") != null) {
+                        A2name = event.getOption("a2name").getAsString();
+                    }
+                    A1val += RollDie(event.getOption("army1num").getAsInt(), 100);
+                    A2val += RollDie(event.getOption("army2num").getAsInt(), 100);
+                    if (event.getOption("multa1dif") != null) {
+                        multAdv *= event.getOption("multa1dif").getAsDouble();
+                        A1val *= event.getOption("multa1dif").getAsDouble();
+                    }
+                    if (event.getOption("multa2dif") != null) {
+                        multAdv /= event.getOption("multa2dif").getAsDouble();
+                        A2val *= event.getOption("multa2dif").getAsDouble();
+                    }
+                    if (A1val > A2val) {
+                        event.getHook().sendMessage("The " + A1name + " has won over the " + A2name + " with a " + (A1val - A2val) + " point advantage.").queue();
+
+                    } else {
+                        event.getHook().sendMessage("The " + A1name + " has lost to the " + A2name + " with a " + (A1val - A2val) + " point disadvantage.").queue();
+                    }
+                    event.getGuild().getChannelById( TextChannel.class, "1237552118986965032").sendMessage("\n ```LOG:  user " + event.getUser().getName() +
+                            " went into combat as the " + A1name + " against the " + A2name + " " + A1num + " on " + A2num +
+                            ".\nthe battle point total was " + (A1val - A2val) + " with a total constant advantage of " + constAdv +
+                            " and a total mulitplicative advantage of " + multAdv + "```").queue();
+                }else{
+                    event.getHook().sendMessage("you cant use this command in this channel").queue();
+                }
+                break;
             default:
                 break;
         }
@@ -198,6 +248,18 @@ public class commandsManager extends ListenerAdapter {
         );
         commandData.add(Commands.slash("say", "say something in your current active charecter in Genreal")
                 .addOption(OptionType.STRING, "message", "this i what you are going to say", true));
+
+        commandData.add(Commands.slash("combat","decide who wins in combat between army 1 and army 2")
+                .addOption(OptionType.INTEGER, "army1num", "the number of soldiers in army 1",true)
+                .addOption(OptionType.INTEGER, "army2num", "the number of soldiers in army 1",true)
+                .addOption(OptionType.INTEGER, "a1dif", "the overall advantage + or disadvantage - of army1",false)
+                .addOption(OptionType.INTEGER, "a2dif", "the overall advantage + or disadvantage - of army2",false)
+                .addOption(OptionType.NUMBER, "multa1dif", "the overall advantage + or disadvantage - of army1 multiplied",false)
+                .addOption(OptionType.NUMBER, "multa2dif", "the overall advantage + or disadvantage - of army2 multiplied",false)
+                .addOption(OptionType.STRING, "a1name", "this is the name your army")
+                .addOption(OptionType.STRING, "a2name", "this is the name of your enemy")
+
+        );
 
         //imports commands here
         event.getGuild().updateCommands().addCommands(commandData).queue();
@@ -283,5 +345,14 @@ public class commandsManager extends ListenerAdapter {
                 }
             }
         }
+
     }
+
+    public int RollDie(int DiceNum, int Val )
+    {
+        int value =0;
+        for(int i=0;i<DiceNum;i++){value +=(int)(Math.random()*Val+1);}
+        return value;
+    }
+
 }
