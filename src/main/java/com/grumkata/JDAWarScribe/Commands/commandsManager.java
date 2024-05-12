@@ -151,7 +151,7 @@ public class commandsManager extends ListenerAdapter {
                         event.deferReply(true).queue();
                         event.getHook().sendMessage("the command CHANGE AVATAR is currently W.I.P").queue();
                         break;
-                    case null, default:
+                    default:
                         event.deferReply(true).queue();
                         event.getHook().sendMessage("the command you put in was invalid use help to get a full list of valid commands").queue();
                         break;
@@ -179,7 +179,7 @@ public class commandsManager extends ListenerAdapter {
                 }
                 event.getHook().sendMessage("message sent").queueAfter(1, TimeUnit.MICROSECONDS);
                 break;
-            case null, default:
+            default:
                 break;
         }
     }
@@ -238,7 +238,7 @@ public class commandsManager extends ListenerAdapter {
                 }
                 event.reply("you have made the new charecter " + event.getValue("name").getAsString()).setEphemeral(true).queue();
                 break;
-            case null, default:
+            default:
                 break;
         }
     }

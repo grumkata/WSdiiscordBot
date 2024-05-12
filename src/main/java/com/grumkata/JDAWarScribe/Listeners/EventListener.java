@@ -203,7 +203,7 @@ public class EventListener extends ListenerAdapter {
 
                     }
                     break;
-                case null, default:
+                default:
                     break;
 
             }
