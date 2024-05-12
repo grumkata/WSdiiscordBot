@@ -159,7 +159,7 @@ public class commandsManager extends ListenerAdapter {
                 }
                 break;
             case "say":
-                event.deferReply(true);
+                event.deferReply(true).queue();
                 charUserDefined = false;
                 currentUser = null;
                 for (sUser person : WarScribe.ServerUsers) {
