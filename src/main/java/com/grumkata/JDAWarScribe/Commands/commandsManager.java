@@ -96,7 +96,7 @@ public class commandsManager extends ListenerAdapter {
                         TextInput personaName = TextInput.create("name", "Name", TextInputStyle.SHORT)
                                 .setPlaceholder("name of your new charecter")
                                 .setMinLength(1)
-                                .setMaxLength(20) // or setRequiredRange(10, 100)
+                                .setMaxLength(40) // or setRequiredRange(10, 100)
                                 .build();
                         TextInput personaAvatar = TextInput.create("avatar", "Avatar url", TextInputStyle.PARAGRAPH)
                                 .setPlaceholder("avatar url of your new charecter.\nignore if you wish to use your current discord avatar. ")
