@@ -178,7 +178,8 @@ public class commandsManager extends ListenerAdapter {
                     client.send(message);
 
                 }
-                event.getHook().sendMessage("message sent").queueAfter(1, TimeUnit.SECONDS);
+                event.getHook().sendMessage("message sent").queue();
+                event.getHook().deleteOriginal().queue();
                 break;
             case "combat":
                 event.deferReply(true).queue();
