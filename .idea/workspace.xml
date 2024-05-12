@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9be4dce3-aafd-450a-879a-9af2696c48a8" name="Changes" comment="fixed rasberry pir dependency shtuff" />
+    <list default="true" id="9be4dce3-aafd-450a-879a-9af2696c48a8" name="Changes" comment="fixed rasberry pir dependency shtuff">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715478123627</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed rasberry pir dependency shtuff">
+      <option name="closed" value="true" />
+      <created>1715478723818</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715478723818</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
