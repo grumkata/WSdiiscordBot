@@ -39,4 +39,4 @@ build/
 
 .env
 src/main/ServerData.json
-src/main/Users.json
+Users.json
