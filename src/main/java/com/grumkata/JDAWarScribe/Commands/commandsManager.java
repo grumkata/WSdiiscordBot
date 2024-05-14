@@ -8,6 +8,7 @@ import com.grumkata.JDAWarScribe.DataManagers.persona;
 import com.grumkata.JDAWarScribe.DataManagers.sUser;
 import com.grumkata.JDAWarScribe.WarScribe;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.Webhook;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
@@ -169,7 +170,24 @@ public class commandsManager extends ListenerAdapter {
                     }
                 }
                 if (charUserDefined && currentUser != null) {
-                    client = WarScribe.GetWebhook();
+                    Webhook whPlaceHolder;
+                    List<Webhook>  WHT = event.getChannel().asTextChannel().retrieveWebhooks().complete();
+                    if(WHT.size()>=1){
+                        whPlaceHolder = WHT.get(0);
+                    }else{
+                        whPlaceHolder = (Webhook) (event.getChannel().asTextChannel().createWebhook(event.getChannel().getName()+"-hook").complete());
+                    }
+
+                    WebhookClientBuilder builder = new WebhookClientBuilder(whPlaceHolder.getUrl());
+                    builder.setThreadFactory((job) -> {
+                        Thread thread = new Thread(job);
+                        thread.setName("RP BOT");
+                        thread.setDaemon(true);
+                        return thread;
+                    });
+                    builder.setWait(true);
+                    WebhookClient client = builder.build();
+
                     WebhookMessage message = new WebhookMessageBuilder()
                             .setUsername(currentUser.getActiveCharecter().name) // use this username
                             .setAvatarUrl(currentUser.getActiveCharecter().avatar) // use this avatar
@@ -178,7 +196,7 @@ public class commandsManager extends ListenerAdapter {
                     client.send(message);
 
                 }
-                event.getHook().sendMessage("message sent").queue();
+                event.getHook().sendMessage("message sent").complete();
                 event.getHook().deleteOriginal().queue();
                 break;
             case "combat":
@@ -230,6 +248,12 @@ public class commandsManager extends ListenerAdapter {
                     event.getHook().sendMessage("you cant use this command in this channel").queue();
                 }
                 break;
+            case "test":
+                event.deferReply(true).queue();
+
+                event.getHook().sendMessage("").queue();
+                event.getHook().deleteOriginal().queue();
+                break;
             default:
                 break;
         }
@@ -261,8 +285,9 @@ public class commandsManager extends ListenerAdapter {
                 .addOption(OptionType.STRING, "a2name", "this is the name of your enemy")
 
         );
+        commandData.add(Commands.slash("test", "this command is purely for testing purposes"));
 
-        //imports commands here
+                //imports commands here
         event.getGuild().updateCommands().addCommands(commandData).queue();
     }
 

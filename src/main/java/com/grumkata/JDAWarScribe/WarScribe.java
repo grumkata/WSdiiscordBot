@@ -15,7 +15,10 @@ import com.grumkata.JDAWarScribe.Listeners.EventListener;
 import io.github.cdimascio.dotenv.Dotenv;
 import kotlin.io.encoding.Base64;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.Webhook;
+import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.api.sharding.ShardManager;
@@ -92,6 +95,7 @@ public class WarScribe {
         WebhookClient client = builder.build();
         return client;
     }
+
 
     public static club.minnced.discord.webhook.WebhookClient GetWebhookultra(int WHType, Long threadID) {
         WebhookClientBuilder builder;
@@ -197,6 +201,8 @@ public class WarScribe {
         }
         return null;
     }
+
+
 
     public static int rollDice(int diceVal, int diceNum) {
         int sum = 0;
