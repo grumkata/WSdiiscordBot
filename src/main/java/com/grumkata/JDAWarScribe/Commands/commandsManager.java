@@ -210,14 +210,6 @@ public class commandsManager extends ListenerAdapter {
                     double multAdv = 1;
                     String A1name = "imperial";
                     String A2name = "caliphate";
-                    if (event.getOption("a1dif") != null) {
-                        constAdv += event.getOption("a1dif").getAsInt();
-                        A1val = event.getOption("a1dif").getAsInt();
-                    }
-                    if (event.getOption("a2dif") != null) {
-                        constAdv += event.getOption("a2dif").getAsInt();
-                        A2val = event.getOption("a2dif").getAsInt();
-                    }
                     if (event.getOption("a1name") != null) {
                         A1name = event.getOption("a1name").getAsString();
                     }
@@ -233,6 +225,14 @@ public class commandsManager extends ListenerAdapter {
                     if (event.getOption("multa2dif") != null) {
                         multAdv /= event.getOption("multa2dif").getAsDouble();
                         A2val *= event.getOption("multa2dif").getAsDouble();
+                    }
+                    if (event.getOption("a1dif") != null) {
+                        constAdv += event.getOption("a1dif").getAsInt();
+                        A1val = event.getOption("a1dif").getAsInt();
+                    }
+                    if (event.getOption("a2dif") != null) {
+                        constAdv += event.getOption("a2dif").getAsInt();
+                        A2val = event.getOption("a2dif").getAsInt();
                     }
                     if (A1val > A2val) {
                         event.getHook().sendMessage("The " + A1name + " has won over the " + A2name + " with a " + (A1val - A2val) + " point advantage.").queue();
